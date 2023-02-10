@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js DOM Events</title>
+</head>
+
+<body>
+    <h1>This is a dom events</h1>
+    <button onclick="console.log('mahafuj ahamed')">touch me</button>
+    <br>
+    <br>
+    <button onclick="makeRed()">make red</button>
+    <button onclick="makeYellow()">make yellow</button>
+    <button onclick="makeBlack()">make black</button>
+    <button id="make-blue">make blue</button>
+    <button id="make-pink">make Pink</button>
+    <button id="make-green">Make Green</button>
+    <script src="js/events.js"></script>
+    <script>
+        const pinkButton = document.getElementById('make-pink');
+        pinkButton.addEventListener('click',makePink);
+
+        function makePink(){
+            document.body.style.backgroundColor = 'pink';
+        } 
+    </script>
+    
+</body>
+
+</html>
