@@ -8,10 +8,36 @@
 </head>
 <body>
     <h1>Please add your comment</h1>
-    <div>
+    <div id="comment-conatainer">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In odio saepe ab vitae molestiae, nisi iste praesentium iure quas quisquam, nobis soluta suscipit, magni ullam eius aperiam pariatur facilis. Ipsam!</p>
         <p>Officia qui alias voluptatum omnis consequatur voluptates mollitia deserunt rem rerum modi! Tempora voluptatem ipsum optio perspiciatis pariatur autem cumque nesciunt necessitatibus iure dolores molestiae ducimus, repudiandae fuga! Neque, maiores.</p>
         <p>Veniam ullam tempore eum maiores libero quam quasi, blanditiis architecto rem maxime excepturi cumque quaerat a inventore. Ratione distinctio earum velit, architecto sequi, fugiat illum iste saepe, quibusdam dolor consectetur.</p>
     </div>
+    <div>
+        <textarea name="" id="new-comment" cols="50" rows="5"></textarea>
+        <br>
+        <button id="btn-post">Post</button>
+    </div>
+    <script>
+        // step-1: add event listener to the post button
+        document.getElementById('btn-post').addEventListener('click', function(){
+            // step-2: get the comment inside the text area
+            const commentBOx = document.getElementById('new-comment');
+            const newComment = commentBOx.value;
+
+            // step-3: set the comment inside the comment container
+            // ..get the comment container 
+            // ..crete a new element(p tag)
+            // ..set the text of the comment as innertext of the p tag
+            // ..add the p tag using appendchild
+            const commentContainer = document.getElementById('comment-conatainer');
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+
+            // step-4: clear the text area
+            commentBOx.value = '';
+        })
+    </script>
 </body>
 </html>
